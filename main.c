@@ -3,6 +3,6 @@
 
 int main()
 {
-    printf("Hello world!\n");
+    printf("Zimbra version alpha\n");
     return 0;
 }
