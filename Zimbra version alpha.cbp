@@ -31,9 +31,20 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="fonctions/get_utilisateur.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/get_utilisateur.h" />
+		<Unit filename="fonctions/menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/menu.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="structures/dossier.h" />
+		<Unit filename="structures/message.h" />
+		<Unit filename="structures/utilisateur.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

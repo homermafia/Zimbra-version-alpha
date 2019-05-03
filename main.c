@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "fonctions/menu.h"
+#include "fonctions/get_utilisateur.h"
+#include "structures/utilisateur.h"
 
 int main()
 {
