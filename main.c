@@ -6,7 +6,6 @@
 
 int main()
 {
-    printf("Hllow world");
     switch (menu()) {
         case 1: printf("Se connecter a ete choisi\n");
         break;
