@@ -31,14 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="fonctions/creer_compte.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/creer_compte.h" />
 		<Unit filename="fonctions/get_utilisateur.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/get_utilisateur.h" />
-		<Unit filename="fonctions/menu.c">
+		<Unit filename="fonctions/menu_demarrer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="fonctions/menu.h" />
+		<Unit filename="fonctions/menu_demarrer.h" />
+		<Unit filename="fonctions/nom_valide.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/nom_valide.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "creer_compte.h"
 
-int menu(void) {
+void menu_demarrer(void) {
     int choix;
 
     printf("Zimbra version alpha\n");
@@ -19,5 +20,13 @@ int menu(void) {
         scanf("%d", &choix);
     }
 
-    return choix;
+    /* vier le buffer ici */
+
+    switch (choix) {
+        case 1: printf("Se connecter a ete choisi\n");
+        break;
+        case 2: creer_compte();
+        break;
+        default: printf("A bientot !\n");
+    }
 }
