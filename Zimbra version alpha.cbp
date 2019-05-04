@@ -31,10 +31,15 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="constantes.h" />
 		<Unit filename="fonctions/creer_compte.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/creer_compte.h" />
+		<Unit filename="fonctions/existe_nom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/existe_nom.h" />
 		<Unit filename="fonctions/get_utilisateur.c">
 			<Option compilerVar="CC" />
 		</Unit>

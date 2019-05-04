@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "creer_compte.h"
+#include "menu_demarrer.h"
 
 void menu_demarrer(void) {
     int choix;
@@ -25,7 +26,10 @@ void menu_demarrer(void) {
     switch (choix) {
         case 1: printf("Se connecter a ete choisi\n");
         break;
-        case 2: creer_compte();
+        case 2: {
+            creer_compte();
+            menu_demarrer();
+        };
         break;
         default: printf("A bientot !\n");
     }
