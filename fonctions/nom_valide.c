@@ -1,3 +1,5 @@
+#include <string.h>
+
 int nom_valide(char nom[]) {
     int i = 0;
 
