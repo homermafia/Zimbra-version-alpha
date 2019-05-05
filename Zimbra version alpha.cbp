@@ -48,6 +48,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/menu_demarrer.h" />
+		<Unit filename="fonctions/menu_messagerie.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/menu_messagerie.h" />
 		<Unit filename="fonctions/nom_valide.c">
 			<Option compilerVar="CC" />
 		</Unit>

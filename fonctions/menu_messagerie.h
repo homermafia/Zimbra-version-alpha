@@ -1,0 +1,6 @@
+#ifndef MENU_MESSAGERIE_H_INCLUDED
+#define MENU_MESSAGERIE_H_INCLUDED
+
+int menu_messagerie(void);
+
+#endif // MENU_MESSAGERIE_H_INCLUDED
