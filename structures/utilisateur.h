@@ -4,7 +4,7 @@
 
 struct utilisateur {
     char nom[21];
-    int num_dossiers, num_bloque;
+    int num_dossiers, num_bloques;
     dossier dossiers[8];
     char util_bloques[10][21];
 };

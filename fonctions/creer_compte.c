@@ -6,7 +6,7 @@
 #include "../constantes.h"
 
 void creer_compte(void) {
-    char nom[21], mdp[21], donnees[250], chemin_donnees[55] = BDD_UTILISATEURS;
+    char nom[21], mdp[21], donnees[250] = "Mot de passe: ", chemin_donnees[55] = BDD_UTILISATEURS;
     int nom_existant;
 
     printf("\nCreation d'un compte\n\n");
@@ -45,10 +45,8 @@ void creer_compte(void) {
     fclose(comptes);
 
     /* Ajout des données de l'utilisateur dans la base de données */
-    strcpy(donnees, nom);
-    strcat(donnees, ": {\n\tMot de passe: ");
     strcat(donnees, mdp);
-    strcat(donnees, ",\n\tDossiers: {\n\t\tBoite de réception: {\n\t\t\t\n\t\t},\n\t\tMessages envoyés: {\n\t\t\t\n\t\t},\n\t\tMessages supprimés: {\n\t\t\t\n\t\t},\n\t},\n\tUtilisateurs bloqués: {\n\t\t\n\t},\n}");
+    strcat(donnees, ",\nDossiers: {\n\tBoite de réception: {\n\t\t\n\t},\n\tMessages envoyés: {\n\t\t\n\t},\n\tMessages supprimés: {\n\t\t\n\t},\n},\nUtilisateurs bloqués: {\n\t\n}");
 
     strcat(chemin_donnees, nom);
     strcat(chemin_donnees, ".txt");
