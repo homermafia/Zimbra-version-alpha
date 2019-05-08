@@ -2,14 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../structures/utilisateur.h"
+#include "../constantes.h"
 
 utilisateur get_utilisateur(char nom[]) {
-    FILE *bdd = fopen("base_de_donnees.txt", "r+");
+    FILE *comptes = fopen(BDD_COMPTES, "r+");
+    utilisateur util;
 
-    if (bdd == NULL) {
-        bdd = fopen("base_de_donnees.txt", "w+");
-    }
 
-    fclose(bdd);
 
+    fclose(comptes);
+
+    return util;
 }

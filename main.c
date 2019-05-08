@@ -5,12 +5,12 @@
 
 int main()
 {
-    /* création du fichier base de données s'il n'existe pas */
-    FILE *bdd = fopen(NOM_BDD, "r");
-    if (bdd == NULL) {
-        bdd = fopen(NOM_BDD, "w");
+    /* création du fichier base de données des comptes s'il n'existe pas */
+    FILE *comptes = fopen(BDD_COMPTES, "r");
+    if (comptes == NULL) {
+        comptes = fopen(BDD_COMPTES, "w");
     }
-    fclose(bdd);
+    fclose(comptes);
 
     /* lancement du programme */
     menu_demarrer();
