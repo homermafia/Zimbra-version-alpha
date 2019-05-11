@@ -1,14 +1,14 @@
 Mot de passe: fezfesgg,
 Dossiers: {
 	Boite de réception: {
-		0: {
+		{
 			Expéditeur: testeur,
 			Date: 1556438305,
 			Titre: test,
 			Corps: Ce message est un test,
 			Lu: 1,
 		},
-		1: {
+		{
 			Expéditeur: tblanchet,
 			Date: 1556438574,
 			Titre: Analyse projet IFC,
@@ -17,27 +17,27 @@ Dossiers: {
 		},
 	},
 	Messages envoyés: {
-		0: {
+		{
 			Destinataire: tblanchet,
-			Date: 155643743,
+			Date: 1556437437,
 			Titre: Projet IFC,
 			Corps: Salut, je viens de mettre en place le projet sur GitHub, à plus !,
 			Lu: 1,
 		},
 	},
 	Messages supprimés: {
-		0: {
+		{
 			Expéditeur: tblanchet,
-			Date: 155642472,
+			Date: 1556424721,
 			Titre: Message intutile,
 			Corps: Ce message est inutile,
 			Lu: 1,
 		},
 	},
 	Important: {
-		0: {
+		{
 			Expéditeur: fnika,
-			Date: 155642871,
+			Date: 1556428715,
 			Titre: Date du final d’IFC,
 			Corps: Bonjour, je vous informe que le final d’IFC aura lieu le 28/06/2019 à 14h en salle P307. Bonnes révisions.,
 			Lu: 1,
@@ -47,4 +47,5 @@ Dossiers: {
 Utilisateurs bloqués: {
 	tblanchet,
 	fnika,
+	testeur,
 }

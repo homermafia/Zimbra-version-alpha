@@ -16,7 +16,7 @@ void get_valeur(char ligne[], char valeur[]) {
     for (i = debut + 2; i <= strlen(ligne) - 3; i = i + 1) {
         valeur[i - debut - 2] = ligne[i];
     }
-    valeur[strlen(valeur)] = '\0';
+    valeur[i - debut - 2] = '\0';
 }
 
 utilisateur get_utilisateur(char nom[]) {
@@ -27,6 +27,7 @@ utilisateur get_utilisateur(char nom[]) {
     char util_bloque[21]; /* variable pour les utilisateurs bloqués */
     int i, num_dossier = 0, num_message = 0, num_bloque = 0;
 
+    strcpy(util.nom, nom);
     strcat(chemin_donnees, nom);
     strcat(chemin_donnees, ".txt");
     FILE *f_utilisateur = fopen(chemin_donnees, "r");
@@ -55,7 +56,7 @@ utilisateur get_utilisateur(char nom[]) {
 
             /* Obtention des messages */
             do {
-                fgets(ligne, 9, f_utilisateur);
+                fgets(ligne, 6, f_utilisateur);
                 if (ligne[1] == '\t' && ligne[2] != '\n' && ligne[2] != '}') { /* on est sur une ligne contenant un message */
                     num_message = num_message + 1;
 

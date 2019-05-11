@@ -44,6 +44,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/get_utilisateur.h" />
+		<Unit filename="fonctions/maj_fichier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/maj_fichier.h" />
 		<Unit filename="fonctions/menu_demarrer.c">
 			<Option compilerVar="CC" />
 		</Unit>
