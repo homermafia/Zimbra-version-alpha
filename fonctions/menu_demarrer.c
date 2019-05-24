@@ -5,6 +5,7 @@
 
 void menu_demarrer(void) {
     int choix;
+    char buffer[1];
 
     printf("Zimbra version alpha\n");
 
@@ -21,7 +22,7 @@ void menu_demarrer(void) {
         scanf("%d", &choix);
     }
 
-    /* vier le buffer ici */
+    gets(buffer); /* vidage du buffer */
 
     switch (choix) {
         case 1: printf("Se connecter a ete choisi\n");

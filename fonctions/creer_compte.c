@@ -10,7 +10,6 @@ void creer_compte(void) {
     int nom_existant;
 
     printf("\nCreation d'un compte\n\n");
-    gets(nom); /* vidage du buffer */
 
     do {
         printf("Entrez un nom d'utilisateur (<= 20 caracteres et lettres uniquement): ");
