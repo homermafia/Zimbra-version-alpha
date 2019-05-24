@@ -3,7 +3,7 @@
 #include <string.h>
 #include "../structures/utilisateur.h"
 
-void menu_messagerie(utilisateur util)
+void menu_dossier(utilisateur util)
 {   int i, choix;
 
     //dossiers
