@@ -11,23 +11,21 @@ void menu_messagerie(utilisateur n)
     for(i=0;n.dossiers[i].nom!='\0';i++){
         printf("%i.%s\n",i+4,n.dossiers[i].nom);
     }
-    i++;
 
     //outils dossiers
-    if(i<4){
-            printf("%i.Creer un dossier\n",i+4);
+    if(i<3){
+            printf("8.Creer un dossier\n");
     }
     if(i>0){
-            printf("%i.Supprimer un dossier\n",i+5);
-            i++;
+            printf("9.Supprimer un dossier\n");
     }
-    printf("%i.Retour",i+5);
+    printf("10.Retour");
 
     //choix
     printf("Veuillez entrer votre choix: ");
     scanf("%d", &choix);
 
-    while (choix < 1 || choix > 3) {
+    while (choix < 1 || choix > 10) {
         printf("\nChoix invalide\n");
         printf("Veuillez entrer votre choix: ");
         scanf("%d", &choix);
@@ -39,8 +37,19 @@ void menu_messagerie(utilisateur n)
         break;
         case 3: ;
         break;
-
-        case i+5: ;
+        case 4: ;
+        break;
+        case 5: ;
+        break;
+        case 6: ;
+        break;
+        case 7: ;
+        break;
+        case 8: ;
+        break;
+        case 9: ;
+        break;
+        case 10: ;
         break;
 
     }
