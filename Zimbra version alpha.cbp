@@ -32,6 +32,14 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="constantes.h" />
+		<Unit filename="fonctions/connexion.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/connexion.h" />
+		<Unit filename="fonctions/corresp_mdp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/corresp_mdp.h" />
 		<Unit filename="fonctions/creer_compte.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -52,6 +60,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/menu_demarrer.h" />
+		<Unit filename="fonctions/menu_dossier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/menu_dossier.h" />
 		<Unit filename="fonctions/menu_messagerie.c">
 			<Option compilerVar="CC" />
 		</Unit>

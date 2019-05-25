@@ -1,12 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "../structures/utilisateur.h"
 
-void menu_messagerie(utilisateur n)
-{   int i=2,choix;
-    //dossiers obligatoires
-    printf("1. Boite de reception\n2. Messages envoyes\n3. Messages effaces\n");
+void menu_messagerie(utilisateur util) {
 
+<<<<<<< HEAD
     //dossiers personnailsés
     for(i=0;n.dossiers[i].nom!='\0';i++){
         printf("%i.%s\n",i+4,n.dossiers[i].nom);
@@ -53,4 +49,6 @@ void menu_messagerie(utilisateur n)
         break;
 
     }
+=======
+>>>>>>> f72fd5a0ce749f18ab7f3447dd5729546b1eedb1
 }
