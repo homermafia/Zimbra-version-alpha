@@ -48,6 +48,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/existe_nom.h" />
+		<Unit filename="fonctions/get_entier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/get_entier.h" />
 		<Unit filename="fonctions/get_utilisateur.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -72,6 +76,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/nom_valide.h" />
+		<Unit filename="fonctions/vider_buffer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/vider_buffer.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
