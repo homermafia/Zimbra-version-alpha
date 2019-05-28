@@ -38,21 +38,18 @@ void menu_dossier(utilisateur util) {
         break;
         case 4:{ if(util.num_dossiers==3){
                 //creation
-                c++;
                 }
                 else{
                 //affiche
                 }
         }
         break;
-        case 5: { if(c==1){
+        case 5: { if(util.num_dossiers==3){
             //retour
-            c++;
             }
             else{
                 if(util.num_dossiers==4){
                 //creation
-                c++;
                 }
                 else{
                 //affiche
@@ -60,14 +57,12 @@ void menu_dossier(utilisateur util) {
             }
         }
         break;
-        case 6: { if(c==1){
+        case 6: { if(util.num_dossiers==4){
             //supprimer
-            c++;
             }
             else{
                 if(util.num_dossiers==5){
                 //creation
-                c++;
                 }
                 else{
                 //affiche
@@ -75,18 +70,16 @@ void menu_dossier(utilisateur util) {
             }
         }
         break;
-        case 7: {if(c==1){
+        case 7: {if(util.num_dossiers==5){
             //supprimer
-            c++;
             }
             else{
-                if(c==2){
+                if(util.num_dossiers==4){
                     menu_messagerie(util);
                 }
                 else{
                     if(util.num_dossiers==6){
                     //creation
-                    c++;
                     }
                     else{
                     //affiche
@@ -95,18 +88,16 @@ void menu_dossier(utilisateur util) {
             }
         }
         break;
-        case 8: { if(c==1){
+        case 8: { if(util.num_dossiers==6){
             //supprimer
-            c++;
             }
             else{
-                if(c==2){
+                if(util.num_dossiers==5){
                     menu_messagerie(util);
                 }
                 else{
                     if(util.num_dossiers==7){
                     //creation
-                    c++;
                     }
                     else{
                     //affiche
@@ -115,12 +106,11 @@ void menu_dossier(utilisateur util) {
             }
         }
         break;
-        case 9: { if(c==2){
+        case 9: { if(util.num_dossiers==6){
             menu_messagerie(util);
             }
             else{
                 //supprimer
-                c++;
             }
         }
         break;

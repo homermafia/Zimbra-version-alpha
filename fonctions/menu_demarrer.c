@@ -3,10 +3,10 @@
 #include "creer_compte.h"
 #include "connexion.h"
 #include "menu_messagerie.h"
+#include "get_entier.h"
 
 void menu_demarrer(void) {
-    int choix;
-    char buffer[1];
+    int choix, succes;
 
     printf("Zimbra version alpha\n");
 
@@ -15,15 +15,13 @@ void menu_demarrer(void) {
     printf("3. Quitter\n\n");
 
     printf("Veuillez entrer votre choix: ");
-    scanf("%d", &choix);
+    succes = get_entier(&choix);
 
-    while (choix < 1 || choix > 3) {
+    while (succes == 0 || choix < 1 || choix > 3) {
         printf("\nChoix invalide\n");
         printf("Veuillez entrer votre choix: ");
-        scanf("%d", &choix);
+        succes = get_entier(&choix);
     }
-
-    gets(buffer); /* vidage du buffer */
 
     switch (choix) {
         case 1: {
