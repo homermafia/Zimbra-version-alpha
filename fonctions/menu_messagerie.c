@@ -1,11 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "../structures/utilisateur.h"
 
 void menu_messagerie(utilisateur util) {
 
-<<<<<<< HEAD
+    int i, choix;
     //dossiers personnailsés
-    for(i=0;n.dossiers[i].nom!='\0';i++){
-        printf("%i.%s\n",i+4,n.dossiers[i].nom);
+    for(i=0;util.dossiers[i].nom!='\0';i++){
+        printf("%i.%s\n",i+4,util.dossiers[i].nom);
     }
 
     //outils dossiers
@@ -47,8 +49,5 @@ void menu_messagerie(utilisateur util) {
         break;
         case 10: ;
         break;
-
     }
-=======
->>>>>>> f72fd5a0ce749f18ab7f3447dd5729546b1eedb1
 }
