@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "get_entier.h"
 #include "menu_messagerie.h"
 #include "../structures/utilisateur.h"
 
 void menu_dossier(utilisateur util) {
+    int i, choix;
 
-    int i, choix, c = 0;
+    printf("\nDossiers:\n\n");
+
     //dossiers personnailsés
     for(i=0;i<util.num_dossiers;i++){
         printf("%i. %s\n",i+1,util.dossiers[i].nom);
@@ -13,22 +16,23 @@ void menu_dossier(utilisateur util) {
 
     //outils dossiers
     if(i<8){
-            printf("%d. Creer un dossier\n", i + 1);
+        printf("%d. Creer un dossier\n", i + 1);
     }
     if(i>3){
-            printf("%d. Supprimer un dossier\n", i + 2);
+        printf("%d. Supprimer un dossier\n", i + 2 - i/8);
     }
-    printf("%d. Retour\n\n", i + 3);
+    printf("%d. Retour\n\n", i + 2 + (i > 3 && i < 8));
 
     //choix
     printf("Veuillez entrer votre choix: ");
-    scanf("%d", &choix);
+    choix = get_entier();
 
-    while (choix < 1 || choix > 3+util.num_dossiers) {
+    while (choix < 1 || choix > i + 2 + (i > 3 && i < 8)) {
         printf("\nChoix invalide\n");
         printf("Veuillez entrer votre choix: ");
-        scanf("%d", &choix);
+        choix = get_entier();
     }
+
     switch (choix) {
         case 1: /*affiche*/ ;
         break;

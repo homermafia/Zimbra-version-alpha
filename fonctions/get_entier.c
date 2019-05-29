@@ -4,7 +4,7 @@
 #include "vider_buffer.h"
 #define MAX_CHIFFRE 2
 
-int get_entier(int *entier) {
+int get_entier(void) {
     char c_entier[MAX_CHIFFRE + 2];
     int i = 0;
 
@@ -14,20 +14,17 @@ int get_entier(int *entier) {
         }
         if (c_entier[i] == '\n') {
             c_entier[i] = '\0';
-            *entier = atoi(c_entier);
-            return 1;
+            return atoi(c_entier);
         }
         else {
             if (c_entier[strlen(c_entier) - 1] != '\n') { /* buffer overflow */
                 vider_buffer();
             }
-            return 0;
         }
     }
     else {
         vider_buffer();
-        return 0;
     }
 
-    return 1;
+    return -1;
 }

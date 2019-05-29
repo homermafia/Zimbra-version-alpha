@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "get_chaine.h"
 #include "nom_valide.h"
 #include "existe_nom.h"
 #include "../constantes.h"
@@ -13,12 +14,9 @@ void creer_compte(void) {
 
     do {
         printf("Entrez un nom d'utilisateur (<= 20 caracteres et lettres uniquement): ");
-        gets(nom);
-
-        while (nom_valide(nom) != 0) {
-            printf("Ce nom ne comporte des caracteres autre que des lettres\n");
+        while (get_chaine(nom, 21) != 1 || nom_valide(nom) != 0) {
+            printf("Nom invalide\n");
             printf("Entrez un nom d'utilisateur (<= 20 caracteres et lettres uniquement): ");
-            gets(nom);
         }
 
         nom_existant = existe_nom(nom);
@@ -29,12 +27,9 @@ void creer_compte(void) {
     while (nom_existant == 1);
 
     printf("Entrez un mot de passe (>= 8 caracteres et <= 20 caracteres): ");
-    gets(mdp);
-
-    while (strlen(mdp) < 8) {
-        printf("Le mot de passe doit contenir au moins 8 caracteres\n");
-        printf("Entrez un mot de passe (>= 8 caractères et <= 20 caracteres): ");
-        gets(mdp);
+    while (get_chaine(mdp, 21) != 1 || strlen(mdp) < 8) {
+        printf("Mot de passe invalide\n");
+        printf("Entrez un mot de passe (>= 8 caracteres et <= 20 caracteres): ");
     }
 
     /* Ajout du nom de l'utilisateur dans la base données */

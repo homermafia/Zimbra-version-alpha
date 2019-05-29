@@ -48,6 +48,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/existe_nom.h" />
+		<Unit filename="fonctions/get_chaine.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/get_chaine.h" />
 		<Unit filename="fonctions/get_entier.c">
 			<Option compilerVar="CC" />
 		</Unit>

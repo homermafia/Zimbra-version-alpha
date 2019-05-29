@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include "get_chaine.h"
 #include "existe_nom.h"
 #include "get_utilisateur.h"
 #include "corresp_mdp.h"
@@ -12,24 +12,18 @@ utilisateur connexion(void) {
     printf("\nConnexion a un compte\n\n");
 
     printf("Nom d'utilisateur: ");
-    gets(nom);
-
-    while (existe_nom(nom) != 1) {
+    while (get_chaine(nom, 21) != 1 || existe_nom(nom) != 1) {
         printf("Ce nom n'existe pas\n");
         printf("Nom d'utilisateur: ");
-        gets(nom);
     }
 
     printf("Mot de passe: ");
-    gets(mdp);
-
-    while (corresp_mdp(mdp, nom) != 1) {
+    while (get_chaine(mdp, 21) != 1 || corresp_mdp(mdp, nom) != 1) {
         printf("Mot de passe incorrect\n");
         printf("Mot de passe: ");
-        gets(mdp);
     }
 
-    printf("\nBienvenue dans votre espace zimbra !\n\n");
+    printf("\nBienvenue dans votre espace zimbra !\n");
 
     return get_utilisateur(nom);
 }
