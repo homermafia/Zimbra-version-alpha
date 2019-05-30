@@ -13,7 +13,9 @@ int main()
     fclose(comptes);
 
     /* lancement du programme */
-    menu_demarrer();
+    printf("Zimbra version alpha\n");
+    while (menu_demarrer() == 1);
+    printf("A bientot !\n");
 
     return 0;
 }

@@ -4,13 +4,13 @@
 #include "menu_messagerie.h"
 #include "connexion.h"
 #include "creer_compte.h"
+#include "../structures/utilisateur.h"
+#include "../constantes.h"
 
-void menu_demarrer(void) {
+int menu_demarrer(void) {
     int choix;
 
-    printf("Zimbra version alpha\n");
-
-    printf("1. Se connecter\n");
+    printf("\n1. Se connecter\n");
     printf("2. Creer un compte\n");
     printf("3. Quitter\n\n");
 
@@ -25,14 +25,19 @@ void menu_demarrer(void) {
 
     switch (choix) {
         case 1: {
-            menu_messagerie(connexion());
+            utilisateur util = connexion();
+            choix = menu_messagerie(util);
+            while (choix == 1) {
+                choix = menu_messagerie(util);
+            }
+            return 1;
         };
         break;
         case 2: {
             creer_compte();
-            menu_demarrer();
+            return 1;
         };
         break;
-        default: printf("A bientot !\n");
+        default: return 0;
     }
 }

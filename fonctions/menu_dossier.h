@@ -2,6 +2,6 @@
 #define MENU_DOSSIER_H_INCLUDED
 #include "../structures/utilisateur.h"
 
-void menu_dossier(utilisateur);
+int menu_dossier(utilisateur);
 
 #endif // MENU_DOSSIER_H_INCLUDED
