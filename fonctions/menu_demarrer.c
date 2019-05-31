@@ -26,10 +26,10 @@ int menu_demarrer(void) {
     switch (choix) {
         case 1: {
             utilisateur util = connexion();
-            choix = menu_messagerie(util);
-            while (choix == 1) {
-                choix = menu_messagerie(util);
+            do {
+                choix = menu_messagerie(&util);
             }
+            while (choix == 1);
             return 1;
         };
         break;

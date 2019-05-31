@@ -80,6 +80,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/nom_valide.h" />
+		<Unit filename="fonctions/supprimer_dossier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/supprimer_dossier.h" />
 		<Unit filename="fonctions/supprimer_message.c">
 			<Option compilerVar="CC" />
 		</Unit>

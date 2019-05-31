@@ -2,6 +2,6 @@
 #define MENU_MESSAGERIE_H_INCLUDED
 #include "../structures/utilisateur.h"
 
-int menu_messagerie(utilisateur);
+int menu_messagerie(utilisateur*);
 
 #endif // MENU_MESSAGERIE_H_INCLUDED
