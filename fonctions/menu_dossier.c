@@ -8,9 +8,8 @@
 int menu_dossier(utilisateur *util) {
     int i, choix;
 
+    //affichage des dossiers
     printf("\nDossiers:\n\n");
-
-    //dossiers personnailsés
     for (i = 0; i < (*util).num_dossiers; i++) {
         printf("%i. %s\n", i + 1, (*util).dossiers[i].nom);
     }

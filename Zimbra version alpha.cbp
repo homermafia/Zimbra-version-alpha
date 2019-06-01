@@ -44,6 +44,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/creer_compte.h" />
+		<Unit filename="fonctions/deplacer_message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/deplacer_message.h" />
 		<Unit filename="fonctions/existe_nom.c">
 			<Option compilerVar="CC" />
 		</Unit>
