@@ -3,7 +3,9 @@
 #include "get_entier.h"
 #include "supprimer_dossier.h"
 #include "../structures/utilisateur.h"
+#include "../structures/dossier.h"
 #include "../constantes.h"
+#include "affiche_messages.h"
 
 int menu_dossier(utilisateur *util) {
     int i, choix;
@@ -34,6 +36,7 @@ int menu_dossier(utilisateur *util) {
     }
 
     if (choix <= (*util).num_dossiers) {
+        affiche_messages(*util,(*util).dossiers[choix]);
         //affiche le dossier (*util).dossiers[choix]
     }
     else {
