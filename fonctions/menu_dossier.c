@@ -36,8 +36,7 @@ int menu_dossier(utilisateur *util) {
     }
 
     if (choix <= (*util).num_dossiers) {
-        affiche_messages(*util,(*util).dossiers[choix]);
-        //affiche le dossier (*util).dossiers[choix]
+        affiche_messages(util, &(*util).dossiers[choix - 1], 1);
     }
     else {
         if ((*util).num_dossiers < MAX_DOSSIERS && (*util).num_dossiers > 3) { /* Créer et supprimer sont affichés */
@@ -76,6 +75,6 @@ int menu_dossier(utilisateur *util) {
         }
     }
 
-    return choix;
+    return 1;
 }
 

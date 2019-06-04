@@ -6,5 +6,6 @@
 #define MAX_DOSSIERS 8 /* nombre maximal de dossiers (en comptant les 3 dossiers par défaut */
 #define MAX_MESSAGES 20 /* nombre maximal de messages dans un dossier */
 #define MAX_BLOQUES 10 /* nombre maximal d'utilisateurs qu'une personne peut bloquer */
+#define NUM_APERCU 10 /* nombre d'apercu de messages affichés dans un dossier */
 
 #endif // CONSTANTES_H_INCLUDED

@@ -32,10 +32,18 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="constantes.h" />
+		<Unit filename="fonctions/affiche_messages.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/affiche_messages.h" />
 		<Unit filename="fonctions/connexion.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/connexion.h" />
+		<Unit filename="fonctions/convertir_date.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/convertir_date.h" />
 		<Unit filename="fonctions/corresp_mdp.c">
 			<Option compilerVar="CC" />
 		</Unit>
