@@ -60,6 +60,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/existe_nom.h" />
+		<Unit filename="fonctions/existe_page.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/existe_page.h" />
 		<Unit filename="fonctions/get_adresse.c">
 			<Option compilerVar="CC" />
 		</Unit>

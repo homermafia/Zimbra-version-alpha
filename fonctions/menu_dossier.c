@@ -57,6 +57,7 @@ int menu_dossier(utilisateur *util) {
             if ((*util).num_dossiers > 3) { /* Supprimer est affiché */
                 if (choix == (*util).num_dossiers + 1) {
                     //supprimer dossier
+                    supprimer_dossier(util);
                     return 1;
                 }
                 else {
