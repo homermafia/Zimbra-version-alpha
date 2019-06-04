@@ -76,6 +76,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/get_entier.h" />
+		<Unit filename="fonctions/get_titre.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/get_titre.h" />
 		<Unit filename="fonctions/get_utilisateur.c">
 			<Option compilerVar="CC" />
 		</Unit>
