@@ -68,6 +68,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/get_chaine.h" />
+		<Unit filename="fonctions/get_corps.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/get_corps.h" />
 		<Unit filename="fonctions/get_entier.c">
 			<Option compilerVar="CC" />
 		</Unit>
