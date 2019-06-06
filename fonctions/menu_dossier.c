@@ -8,7 +8,7 @@
 #include "affiche_messages.h"
 
 int menu_dossier(utilisateur *util) {
-    int i, choix;
+    int i, choix, page;
 
     //affichage des dossiers
     printf("\nDossiers:\n\n");
@@ -36,7 +36,12 @@ int menu_dossier(utilisateur *util) {
     }
 
     if (choix <= (*util).num_dossiers) {
-        affiche_messages(util, &(*util).dossiers[choix - 1], 1);
+        page = 1;
+
+        do {
+            page = affiche_messages(util, &(*util).dossiers[choix - 1], page);
+        }
+        while (page > 0);
     }
     else {
         if ((*util).num_dossiers < MAX_DOSSIERS && (*util).num_dossiers > 3) { /* Créer et supprimer sont affichés */

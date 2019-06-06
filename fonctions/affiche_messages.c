@@ -59,7 +59,7 @@ int affiche_messages(utilisateur *util, dossier *dos, int page) {
         }
     }
 
-    printf("Veuillez entrer votre choix: ");
+    printf("\nVeuillez entrer votre choix: ");
     choix = get_entier();
 
     while (choix < 1 || choix > num_choix) {
@@ -69,52 +69,65 @@ int affiche_messages(utilisateur *util, dossier *dos, int page) {
     }
 
     if (choix <= num_affiche) {
-        affiche_message(util,&(*dos).messages[choix-1]);
+        affiche_message(util, &(*dos).messages[choix - 1]);
     }
     else {
-        switch(num_choix-num_affiche){
-            case 3: {   if(choix-num_affiche==1)
-                                {if (existe_page(dos, page + 1))
-                                    {
-                                        affiche_messages(util,dos,page+1);
-                                    }
-                                    else{
-                                        affiche_messages(util,dos,page-1);
-                                    }
+        printf("num = %d\n", num_choix - num_affiche);
+        switch (num_choix - num_affiche) {
+            case 1: return 0; /* retour affiché */
+            break;
+            case 3: { /* (page suivante OU page precedente) ET aller a la page ET retour affichés */
+                switch (choix - num_affiche) {
+                    case 1: { /* page suivante OU page precedente sélectionnée */
+                        if (existe_page(dos, page + 1)) {
+                            return page + 1;
                         }
-                        if(choix-num_affiche==2)
-                                {printf("Quel page desirez vous?\n");
-                                printf("Veuillez entrer votre choix: ");
-                                choix = get_entier();
-                                while (choix < 1 || choix > 1 + ((*dos).num_messages - 1)/NUM_APERCU) {
-                                    printf("\nChoix invalide\n");
-                                    printf("Veuillez entrer votre choix: ");
-                                    choix = get_entier();
-                                }
-                                affiche_messages(util,dos,choix);
+                        else {
+                            return page - 1;
                         }
+                    }
+                    break;
+                    case 2: {
+                        printf("Entrez le numéro de la page auquelle vous souhaitez aller: ");
+                        choix = get_entier();
+
+                        while (choix < 1 || choix > 1 + ((*dos).num_messages - 1)/NUM_APERCU) {
+                            printf("\nPage invalide\n");
+                            printf("Entrez le numéro de la page auquelle vous souhaitez aller: ");
+                            choix = get_entier();
+                        }
+
+                        return choix;
+                    }
+                    break;
+                    default: return 0;
+                }
             }
             break;
-            case 4:{    if(choix-num_affiche==1)
-                                {affiche_messages(util,dos,page+1);
+            default: { /* page suivante ET page precedente ET aller a la page ET retour affichés */
+                switch (choix - num_affiche) {
+                    case 1: return page + 1;
+                    break;
+                    case 2: return page - 1;
+                    break;
+                    case 3: {
+                        printf("Entrez le numéro de la page auquelle vous souhaitez aller: ");
+                        choix = get_entier();
+
+                        while (choix < 1 || choix > 1 + ((*dos).num_messages - 1)/NUM_APERCU) {
+                            printf("\nPage invalide\n");
+                            printf("Entrez le numéro de la page auquelle vous souhaitez aller: ");
+                            choix = get_entier();
                         }
-                        if(choix-num_affiche==2)
-                                {affiche_messages(util,dos,page-1);
-                        }
-                        if(choix-num_affiche==3)
-                                {printf("Quel page desirez vous?\n");
-                                printf("Veuillez entrer votre choix: ");
-                                choix = get_entier();
-                                while (choix < 1 || choix > 1 + ((*dos).num_messages - 1)/NUM_APERCU) {
-                                    printf("\nChoix invalide\n");
-                                    printf("Veuillez entrer votre choix: ");
-                                    choix = get_entier();
-                                }
-                                affiche_messages(util,dos,choix);
-                        }
+
+                        return choix;
+                    }
+                    break;
+                    default: return 0;
+                }
             }
-            break;
         }
     }
+
     return 0;
 }
