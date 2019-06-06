@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "get_entier.h"
 #include "convertir_date.h"
 #include "repondre_message.h"
@@ -18,7 +19,13 @@ int affiche_message(utilisateur *util, message *mes) {
     (*mes).lu=1;
     convertir_date((*mes).date,date);
     printf("\nMessage\n\n");
-    printf("De %s\nEnvoye le %s\nDossier : %s\nSujet: %s\n\n%s\n\n",(*mes).expediteur,date,(*mes).dossier,(*mes).titre,(*mes).corps);
+    if(strcmp((*mes).dossier,"Messages envoyés")==0){
+       printf("Pour %s\n",(*mes).destinataire);
+       }
+    else{
+        printf("De %s\n",(*mes).expediteur);
+    }
+    printf("Envoye le %s\nDossier : %s\nSujet: %s\n\n%s\n\n",date,(*mes).dossier,(*mes).titre,(*mes).corps);
     printf("1. Repondre\n2. Supprimer\n3. Marquer comme non-lu\n4. Déplacer vers\n5. Bloquer cet expediteur\n6. Retour\n\n");
     printf("Veuillez entrer votre choix: ");
     choix = get_entier();
