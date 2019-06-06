@@ -12,7 +12,6 @@
 int affiche_messages(utilisateur *util, dossier *dos, int page) {
     int i, num_affiche, num_choix, choix;
     char apercu[90], date[19];
-
     printf("\nPage %d/%d:\n\n", page, 1 + ((*dos).num_messages - 1)/NUM_APERCU);
 
     for (i = (page - 1)*NUM_APERCU; i < page*NUM_APERCU && i < (*dos).num_messages; i++) {
