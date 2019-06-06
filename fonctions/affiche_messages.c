@@ -7,8 +7,9 @@
 #include "../constantes.h"
 #include "../structures/utilisateur.h"
 #include "../structures/dossier.h"
+#include "affiche_message.h"
 
-void affiche_messages(utilisateur *util, dossier *dos, int page) {
+int affiche_messages(utilisateur *util, dossier *dos, int page) {
     int i, num_affiche, num_choix, choix;
     char apercu[90], date[19];
 
@@ -43,7 +44,7 @@ void affiche_messages(utilisateur *util, dossier *dos, int page) {
             printf("%d. Page suivante\n", num_affiche + 1);
             printf("%d. Aller a la page\n", num_affiche + 2);
             printf("%d. Retour\n", num_affiche + 3);
-            num_choix = num_affiche + + 3;
+            num_choix = num_affiche + 3;
         }
         else {
             if (existe_page(dos, page - 1)) {
@@ -53,9 +54,8 @@ void affiche_messages(utilisateur *util, dossier *dos, int page) {
                 num_choix = num_affiche + 3;
             }
             else {
-                printf("%d. Aller a la page\n", num_affiche + 1);
-                printf("%d. Retour\n", num_affiche + 2);
-                num_choix = num_affiche + 2;
+                printf("%d. Retour\n", num_affiche + 1);
+                num_choix = num_affiche + 1;
             }
         }
     }
@@ -70,9 +70,52 @@ void affiche_messages(utilisateur *util, dossier *dos, int page) {
     }
 
     if (choix <= num_affiche) {
-        // afficge_message
+        affiche_message(util,&(*dos).messages[choix-1]);
     }
     else {
-        //switch case comme dans menu_dossier
+        switch(num_choix-num_affiche){
+            case 3: {   if(choix-num_affiche==1)
+                                {if (existe_page(dos, page + 1))
+                                    {
+                                        affiche_messages(util,dos,page+1);
+                                    }
+                                    else{
+                                        affiche_messages(util,dos,page-1);
+                                    }
+                        }
+                        if(choix-num_affiche==2)
+                                {printf("Quel page desirez vous?\n");
+                                printf("Veuillez entrer votre choix: ");
+                                choix = get_entier();
+                                while (choix < 1 || choix > 1 + ((*dos).num_messages - 1)/NUM_APERCU) {
+                                    printf("\nChoix invalide\n");
+                                    printf("Veuillez entrer votre choix: ");
+                                    choix = get_entier();
+                                }
+                                affiche_messages(util,dos,choix);
+                        }
+            }
+            break;
+            case 4:{    if(choix-num_affiche==1)
+                                {affiche_messages(util,dos,page+1);
+                        }
+                        if(choix-num_affiche==2)
+                                {affiche_messages(util,dos,page-1);
+                        }
+                        if(choix-num_affiche==3)
+                                {printf("Quel page desirez vous?\n");
+                                printf("Veuillez entrer votre choix: ");
+                                choix = get_entier();
+                                while (choix < 1 || choix > 1 + ((*dos).num_messages - 1)/NUM_APERCU) {
+                                    printf("\nChoix invalide\n");
+                                    printf("Veuillez entrer votre choix: ");
+                                    choix = get_entier();
+                                }
+                                affiche_messages(util,dos,choix);
+                        }
+            }
+            break;
+        }
     }
+    return 0;
 }
