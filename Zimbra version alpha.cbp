@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="constantes.h" />
+		<Unit filename="fonctions/affiche_message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/affiche_message.h" />
 		<Unit filename="fonctions/affiche_messages.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -108,6 +112,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/nom_valide.h" />
+		<Unit filename="fonctions/repondre_message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/repondre_message.h" />
 		<Unit filename="fonctions/supprimer_dossier.c">
 			<Option compilerVar="CC" />
 		</Unit>
