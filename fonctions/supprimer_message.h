@@ -3,6 +3,6 @@
 #include "../structures/utilisateur.h"
 #include "../structures/message.h"
 
-void supprimer_message(utilisateur*, message);
+void supprimer_message(utilisateur*, message*);
 
 #endif // SUPPRIMER_MESSAGE_H_INCLUDED

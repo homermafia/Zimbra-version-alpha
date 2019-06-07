@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "get_entier.h"
 #include "menu_dossier.h"
+#include "composer_message.h"
 #include "../structures/utilisateur.h"
 
 int menu_messagerie(utilisateur *util) {
@@ -28,7 +29,7 @@ int menu_messagerie(utilisateur *util) {
         }
         break;
         case 2: {
-            /*evoyer*/
+            composer_message(util);
             return 1;
         }
         break;

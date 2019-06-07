@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "get_entier.h"
+#include "creer_dossier.h"
 #include "supprimer_dossier.h"
 #include "../structures/utilisateur.h"
 #include "../structures/dossier.h"
@@ -47,6 +48,7 @@ int menu_dossier(utilisateur *util) {
         if ((*util).num_dossiers < MAX_DOSSIERS && (*util).num_dossiers > 3) { /* Créer et supprimer sont affichés */
             switch (choix - (*util).num_dossiers) {
                 case 1: { /*Créer*/
+                    creer_dossier(util);
                     return 1;
                 };
                 break;
@@ -61,7 +63,6 @@ int menu_dossier(utilisateur *util) {
         else {
             if ((*util).num_dossiers > 3) { /* Supprimer est affiché */
                 if (choix == (*util).num_dossiers + 1) {
-                    //supprimer dossier
                     supprimer_dossier(util);
                     return 1;
                 }
@@ -71,7 +72,7 @@ int menu_dossier(utilisateur *util) {
             }
             else { /* Créer est affiché */
                 if (choix == (*util).num_dossiers + 1) {
-                    //creer dossier
+                    creer_dossier(util);
                     return 1;
                 }
                 else {

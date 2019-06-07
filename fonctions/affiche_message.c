@@ -6,47 +6,76 @@
 #include "repondre_message.h"
 #include "supprimer_message.h"
 #include "deplacer_message.h"
+#include "bloquer_exp.h"
 #include "maj_fichier.h"
 #include "../structures/utilisateur.h"
 #include "../structures/dossier.h"
 #include "../structures/message.h"
-int affiche_message(utilisateur *util, message *mes) {
+
+int affiche_message(utilisateur *util, message *msg) {
     int choix;
-    char date[19];
-    message nmes;
-    message *NMES;
-    NMES=&nmes;
-    (*mes).lu=1;
-    convertir_date((*mes).date,date);
+    char date[20];
+
+    (*msg).lu = 1;
+    convertir_date((*msg).date, date);
+
     printf("\nMessage\n\n");
-    if(strcmp((*mes).dossier,"Messages envoyés")==0){
-       printf("Pour %s\n",(*mes).destinataire);
-       }
-    else{
-        printf("De %s\n",(*mes).expediteur);
+
+    if (strcmp((*msg).expediteur, (*util).nom) == 0) {
+       printf("Destinataire: %s\n", (*msg).destinataire);
     }
-    printf("Envoye le %s\nDossier : %s\nSujet: %s\n\n%s\n\n",date,(*mes).dossier,(*mes).titre,(*mes).corps);
-    printf("1. Repondre\n2. Supprimer\n3. Marquer comme non-lu\n4. Déplacer vers\n5. Bloquer cet expediteur\n6. Retour\n\n");
+    else {
+        printf("Expediteur: %s\n", (*msg).expediteur);
+    }
+
+    printf("Envoye le: %s\nDossier: %s\nObjet: %s\n\n%s\n\n",date,(*msg).dossier,(*msg).titre,(*msg).corps);
+
+    if (strcmp((*msg).expediteur, (*util).nom) == 0) {
+       printf("1. Supprimer\n2. Marquer comme non-lu\n3. Retour\n\n");
+    }
+    else {
+        printf("1. Repondre\n2. Supprimer\n3. Marquer comme non-lu\n4. Deplacer vers\n5. Bloquer cet expediteur\n6. Retour\n\n");
+    }
+
     printf("Veuillez entrer votre choix: ");
     choix = get_entier();
 
-    while (choix < 1 || choix > 6) {
+    while (choix < 1 || choix > 3 + (strcmp((*msg).expediteur, (*util).nom) != 0)*3) {
         printf("\nChoix invalide\n");
         printf("Veuillez entrer votre choix: ");
         choix = get_entier();
     }
-    switch(choix){
-            case 1: repondre_message(util, mes, NMES);
+
+    if (strcmp((*msg).expediteur, (*util).nom) == 0) {
+       switch (choix) {
+            case 1: supprimer_message(util, msg);
             break;
-            case 2: supprimer_message(util, *mes);
+            case 2: {
+                (*msg).lu = 0;
+                maj_fichier(util);
+            }
             break;
-            case 3: (*mes).lu=0;
-            break;
-            case 4: deplacer_message(util, *mes);
-            break;
-            case 5:/*bloquer cet expéditeur*/;
-            break;
+            default: return 0;
+        }
     }
-    maj_fichier(util);
-    return 0;
+    else {
+        switch (choix) {
+            case 1: repondre_message(util, msg);
+            break;
+            case 2: supprimer_message(util, msg);
+            break;
+            case 3: {
+                (*msg).lu = 0;
+                maj_fichier(util);
+            }
+            break;
+            case 4: deplacer_message(util, msg);
+            break;
+            case 5: bloquer_exp(util, (*msg).expediteur);
+            break;
+            default: return 0;
+        }
+    }
+
+    return 1;
 }

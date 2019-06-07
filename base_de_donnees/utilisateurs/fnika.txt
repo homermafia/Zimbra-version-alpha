@@ -1,0 +1,15 @@
+Mot de passe: test_mdp,
+Dossiers: {
+	Boite de réception: {
+		
+	},
+	Messages envoyés: {
+		
+	},
+	Messages supprimés: {
+		
+	},
+},
+Utilisateurs bloqués: {
+	
+}

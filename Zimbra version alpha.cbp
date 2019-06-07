@@ -40,6 +40,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/affiche_messages.h" />
+		<Unit filename="fonctions/bloquer_exp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/bloquer_exp.h" />
+		<Unit filename="fonctions/composer_message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/composer_message.h" />
 		<Unit filename="fonctions/connexion.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -56,10 +64,22 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/creer_compte.h" />
+		<Unit filename="fonctions/creer_dossier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/creer_dossier.h" />
 		<Unit filename="fonctions/deplacer_message.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/deplacer_message.h" />
+		<Unit filename="fonctions/envoyer_message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/envoyer_message.h" />
+		<Unit filename="fonctions/est_bloque.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/est_bloque.h" />
 		<Unit filename="fonctions/existe_nom.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -92,6 +112,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="fonctions/get_utilisateur.h" />
+		<Unit filename="fonctions/inserer_message.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fonctions/inserer_message.h" />
 		<Unit filename="fonctions/maj_fichier.c">
 			<Option compilerVar="CC" />
 		</Unit>

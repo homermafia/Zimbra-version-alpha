@@ -3,6 +3,6 @@
 #include "../structures/utilisateur.h"
 #include "../structures/message.h"
 
-int repondre_message(utilisateur *, message *recu, message *nouveau);
+int repondre_message(utilisateur*, message*);
 
 #endif // REPONDRE_MESSAGE_H_INCLUDED

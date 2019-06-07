@@ -3,6 +3,6 @@
 #include "../structures/utilisateur.h"
 #include "../structures/message.h"
 
-int affiche_message(utilisateur *, message *);
+int affiche_message(utilisateur*, message*);
 
 #endif // AFFICHE_MESSAGE_H_INCLUDED

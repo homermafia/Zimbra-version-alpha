@@ -3,11 +3,12 @@
 #include <string.h>
 #include "get_entier.h"
 #include "maj_fichier.h"
+#include "inserer_message.h"
 #include "../constantes.h"
 #include "../structures/utilisateur.h"
 #include "../structures/message.h"
 
-void deplacer_message(utilisateur *util, message msg) {
+void deplacer_message(utilisateur *util, message *msg) {
     int i, n, v, choix;
 
     printf("Dossiers\n\n");
@@ -27,21 +28,17 @@ void deplacer_message(utilisateur *util, message msg) {
 
     if (choix < i + 1) {
         //déplacement du message
-        for (n = (*util).dossiers[i - 1].num_messages - 1 - (*util).dossiers[i - 1].num_messages/MAX_MESSAGES; n >= 0; n = n - 1) {
-            (*util).dossiers[i - 1].messages[n + 1] = (*util).dossiers[i - 1].messages[n];
-        }
-        (*util).dossiers[i - 1].messages[0] = msg;
-        (*util).dossiers[i - 1].num_messages = (*util).dossiers[i - 1].num_messages + ((*util).dossiers[i - 1].num_messages < MAX_MESSAGES);
+        inserer_message(util, msg, i - 1);
 
         //effacement du message dans le dossier d'origine
         i = 0;
         n = 0;
 
-        while (strcmp((*util).dossiers[i].nom, msg.dossier) != 0) {
+        while (strcmp((*util).dossiers[i].nom, (*msg).dossier) != 0) {
             i = i + 1;
         }
 
-        while ((*util).dossiers[i].messages[n].date != msg.date) {
+        while ((*util).dossiers[i].messages[n].date != (*msg).date) {
             n = n + 1;
         }
 

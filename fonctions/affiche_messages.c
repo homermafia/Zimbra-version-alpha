@@ -11,10 +11,13 @@
 
 int affiche_messages(utilisateur *util, dossier *dos, int page) {
     int i, num_affiche, num_choix, choix;
-    char apercu[90], date[19];
-    printf("\nPage %d/%d:\n\n", page, 1 + ((*dos).num_messages - 1)/NUM_APERCU);
+    char apercu[90], date[20];
+
+    printf("\nDossier: %s\n", (*dos).nom);
+    printf("Page %d/%d:\n\n", page, 1 + ((*dos).num_messages - 1)/NUM_APERCU);
 
     for (i = (page - 1)*NUM_APERCU; i < page*NUM_APERCU && i < (*dos).num_messages; i++) {
+
         itoa(i + 1, apercu, 10);
         strcat(apercu, ". ");
         if ((*dos).messages[i].lu == 0) {
@@ -72,7 +75,6 @@ int affiche_messages(utilisateur *util, dossier *dos, int page) {
         affiche_message(util, &(*dos).messages[choix - 1]);
     }
     else {
-        printf("num = %d\n", num_choix - num_affiche);
         switch (num_choix - num_affiche) {
             case 1: return 0; /* retour affiché */
             break;
@@ -129,5 +131,5 @@ int affiche_messages(utilisateur *util, dossier *dos, int page) {
         }
     }
 
-    return 0;
+    return 1;
 }
