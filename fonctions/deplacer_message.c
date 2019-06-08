@@ -10,6 +10,7 @@
 
 void deplacer_message(utilisateur *util, message *msg) {
     int i, n, v, choix;
+    char dossier_origine[21];
 
     printf("Dossiers\n\n");
     for (i = 0; i < (*util).num_dossiers; i++) {
@@ -28,13 +29,14 @@ void deplacer_message(utilisateur *util, message *msg) {
 
     if (choix < i + 1) {
         //déplacement du message
-        inserer_message(util, msg, i - 1);
+        strcpy(dossier_origine, (*msg).dossier);
+        inserer_message(util, msg, choix - 1);
 
         //effacement du message dans le dossier d'origine
         i = 0;
         n = 0;
 
-        while (strcmp((*util).dossiers[i].nom, (*msg).dossier) != 0) {
+        while (strcmp((*util).dossiers[i].nom, dossier_origine) != 0) {
             i = i + 1;
         }
 

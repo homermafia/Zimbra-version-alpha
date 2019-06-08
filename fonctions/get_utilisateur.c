@@ -62,6 +62,7 @@ utilisateur get_utilisateur(char nom[]) {
 
                     fgets(ligne, 40, f_utilisateur); /* ligne expéditeur ou destinataire */
                     get_valeur(ligne, autre_util);
+                    int est_envoyeur = ligne[3] == 'D';
 
                     fgets(ligne, 25, f_utilisateur); /* ligne date */
                     get_valeur(ligne, date_c);
@@ -78,11 +79,13 @@ utilisateur get_utilisateur(char nom[]) {
                     /* Création de la structure message */
                     message msg;
 
-                    if (strcmp(nom_dossier, "Messages envoyés") == 0) {
+                    if (est_envoyeur) {
+                        strcpy(msg.expediteur, nom);
                         strcpy(msg.destinataire, autre_util);
                     }
                     else {
                         strcpy(msg.expediteur, autre_util);
+                        strcpy(msg.destinataire, nom);
                     }
                     strcpy(msg.titre, titre);
                     strcpy(msg.corps, corps);

@@ -23,7 +23,7 @@ void composer_message(utilisateur *util) {
     destinataire = get_utilisateur(msg.destinataire);
 
     if (est_bloque(&destinataire, (*util).nom)) {
-        printf("Vous ne pouvez pas envoyer de message a ce destinataire car il vous a bloque");
+        printf("Vous ne pouvez pas envoyer de message a ce destinataire car il vous a bloque\n");
     }
     else {
         strcpy(msg.expediteur, (*util).nom);

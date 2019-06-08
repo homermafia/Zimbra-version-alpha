@@ -1,26 +1,25 @@
 Mot de passe: test_mdp,
 Dossiers: {
 	Boite de réception: {
-		
+		{
+			Expéditeur: aadam,
+			Date: 1559983249,
+			Titre: Projet termine,
+			Corps: J'ai fini de faire les dernieres modifications pour le projet,
+			Lu: 1,
+		},
 	},
 	Messages envoyés: {
-		
+		{
+			Destinataire: aadam,
+			Date: 1559992619,
+			Titre: Re: Projet termine,
+			Corps: Super ! C'est cool !,
+			Lu: 1,
+		},
 	},
 	Messages supprimés: {
-		{
-			Expéditeur: aadam,
-			Date: 1559937855,
-			Titre: Re: Finished,
-			Corps: Coo l!,
-			Lu: 1,
-		},
-		{
-			Expéditeur: aadam,
-			Date: 1559937554,
-			Titre: Finished,
-			Corps: Fini ce projet !,
-			Lu: 1,
-		},
+		
 	},
 },
 Utilisateurs bloqués: {

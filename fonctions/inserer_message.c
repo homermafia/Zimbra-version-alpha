@@ -1,3 +1,4 @@
+#include <string.h>
 #include "../constantes.h"
 #include "../structures/utilisateur.h"
 #include "../structures/message.h"
@@ -8,6 +9,8 @@ void inserer_message(utilisateur *util, message *msg, int i) {
     for (n = (*util).dossiers[i].num_messages - 1 - (*util).dossiers[i].num_messages/MAX_MESSAGES; n >= 0; n = n - 1) {
         (*util).dossiers[i].messages[n + 1] = (*util).dossiers[i].messages[n];
     }
+
+    strcpy((*msg).dossier, (*util).dossiers[i].nom);
     (*util).dossiers[i].messages[0] = *msg;
     (*util).dossiers[i].num_messages = (*util).dossiers[i].num_messages + ((*util).dossiers[i].num_messages < MAX_MESSAGES);
 }

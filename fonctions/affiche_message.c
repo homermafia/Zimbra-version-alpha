@@ -16,7 +16,11 @@ int affiche_message(utilisateur *util, message *msg) {
     int choix;
     char date[20];
 
-    (*msg).lu = 1;
+    if ((*msg).lu == 0) {
+        (*msg).lu = 1;
+        maj_fichier(util);
+    }
+
     convertir_date((*msg).date, date);
 
     printf("\nMessage\n\n");

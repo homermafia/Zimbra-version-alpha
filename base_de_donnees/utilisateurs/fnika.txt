@@ -4,7 +4,13 @@ Dossiers: {
 		
 	},
 	Messages envoyés: {
-		
+		{
+			Destinataire: aadam,
+			Date: 1559993314,
+			Titre: Final d'IFC,
+			Corps: Bonjour, je vous annonce que le final d'IFC aura lieu le mardi 11 juin a 10h30 en P307. Bonnes revisions,
+			Lu: 1,
+		},
 	},
 	Messages supprimés: {
 		

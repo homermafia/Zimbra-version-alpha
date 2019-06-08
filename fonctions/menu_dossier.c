@@ -9,12 +9,22 @@
 #include "affiche_messages.h"
 
 int menu_dossier(utilisateur *util) {
-    int i, choix, page;
+    int i, n, num_non_lu, choix, page;
 
     //affichage des dossiers
     printf("\nDossiers:\n\n");
     for (i = 0; i < (*util).num_dossiers; i++) {
-        printf("%i. %s\n", i + 1, (*util).dossiers[i].nom);
+        num_non_lu = 0;
+        for (n = 0; n < (*util).dossiers[i].num_messages; n = n + 1) {
+            if ((*util).dossiers[i].messages[n].lu == 0) {
+                num_non_lu = num_non_lu + 1;
+            }
+        }
+        printf("%i. %s", i + 1, (*util).dossiers[i].nom);
+        if (num_non_lu > 0) {
+            printf(" (%d)", num_non_lu);
+        }
+        printf("\n");
     }
 
     //outils dossiers

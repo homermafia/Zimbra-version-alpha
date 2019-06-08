@@ -13,7 +13,7 @@ void repondre_message(utilisateur *util, message *msg) {
     utilisateur expediteur = get_utilisateur((*msg).expediteur);
 
     if (est_bloque(&expediteur, (*util).nom)) {
-        printf("\nVous ne pouvez pas repondre a ce message car l'expediteur vous a bloque.\n\n");
+        printf("\nVous ne pouvez pas repondre a ce message car l'expediteur vous a bloque.\n");
     }
     else {
         printf("\nRepondre a ce message\n\n");
