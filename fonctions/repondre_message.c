@@ -18,7 +18,9 @@ void repondre_message(utilisateur *util, message *msg) {
     else {
         printf("\nRepondre a ce message\n\n");
         strcpy(msg_r.expediteur, (*util).nom);
-        strcpy(msg_r.titre,"Re: ");
+        if (strlen((*msg).titre) <= 26) {
+            strcpy(msg_r.titre,"Re: ");
+        }
         strcat(msg_r.titre, (*msg).titre);
         strcpy(msg_r.destinataire, (*msg).expediteur);
         get_corps(msg_r.corps);
