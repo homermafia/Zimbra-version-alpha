@@ -18,7 +18,7 @@ int affiche_messages(utilisateur *util, dossier *dos, int page) {
 
     for (i = (page - 1)*NUM_APERCU; i < page*NUM_APERCU && i < (*dos).num_messages; i++) {
 
-        itoa(i + 1, apercu, 10);
+        itoa(i - (page - 1)*NUM_APERCU + 1, apercu, 10);
         strcat(apercu, ". ");
         if ((*dos).messages[i].lu == 0) {
             strcat(apercu,"*** ");
